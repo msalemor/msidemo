@@ -18,8 +18,8 @@ namespace WStorageApp.Controllers
 
     public class HomeController : Controller
     {
-        static string accountName = "alemormist";
-        static string containerName = "datacontainer1";
+        static string accountName = "mystoractacct";
+        static string containerName = "webcontainer";
 
         public async Task<IActionResult> Index()
         {
