@@ -10,8 +10,8 @@ namespace CStorageApp
 {
     class Program
     {
-        static string accountName = "alemormist";
-        static string containerName = "datacontainer";
+        static string accountName = "mystorageacct";
+        static string containerName = "containername";
 
         static async Task Main(string[] args)
         {
