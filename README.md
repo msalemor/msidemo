@@ -1,6 +1,6 @@
 # Mananged System Identities and Storage Account Access Code Demo
 
-Use Mananged System Identities (MSI) to authenticate to any service that supports Azure AD authentication, including Key Vault, without any credentials in your code.
+Use Mananged System Identities (MSI) to authenticate to any service that supports Azure AD authentication, including Key Vault, **without any credentials in your code.**
 
 ## About this code demo
 
