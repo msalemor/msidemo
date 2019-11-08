@@ -6,6 +6,7 @@
 - Create a system managed identity for the Web App and the VM
 - Grant the role of Storage Account Contributor and Storage Blob Data Contributor to the MI for the VM and Web App
 - Access and install VS2019 on the VM
+> **Note:** This is key because the VM is the one that has the MSI
 - Create a solution with two projects (console and MVC app) based on the code at this link:
   - https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-msi
 - Run the console app
