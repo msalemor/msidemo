@@ -11,7 +11,7 @@ namespace CStorageApp
     class Program
     {
         static string accountName = "mystorageacct";
-        static string containerName = "containername";
+        static string containerName = "consolecontainer";
 
         static async Task Main(string[] args)
         {
