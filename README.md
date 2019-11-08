@@ -17,6 +17,15 @@ This demo creates a container and blobs on a VM and App Service having MSIs and 
 > **Note:** Testing of the console app has to be done from the VM with the MSI. Otherwise, the test will fail.
 - Deploy the web app to the app service, and test the app
 
+## How does it work
+
+```c#
+// Get a credential 
+var credential = new DefaultAzureCredential();
+// Create a client object for the blob container with the credentail
+BlobContainerClient containerClient = new BlobContainerClient(new Uri(containerEndpoint), credential);
+```                                                                            
+
 ## More Information
 
 https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-msi
