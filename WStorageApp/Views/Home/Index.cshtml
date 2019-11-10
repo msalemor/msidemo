@@ -3,10 +3,10 @@
 }
 
 @*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
 
 <div>
-    A new file has been created in blob storage: @ViewData["File"]
+    <h4>The system has connected to storage account <strong>@ViewBag.StorageAccount</strong> without credentials and has created a new blob <strong>@ViewBag.File</strong> in container <strong>@ViewBag.ContainerName</strong>.</h4>
 </div>

@@ -18,13 +18,16 @@ namespace WStorageApp.Controllers
 
     public class HomeController : Controller
     {
-        static string accountName = "mystoractacct";
-        static string containerName = "webcontainer";
+        static string accountName = "alemormisstorage";
+        static string containerName = "datacontainer";
 
         public async Task<IActionResult> Index()
         {
             var newFile = await CreateBlockBlobAsync(accountName, containerName);
-            ViewData["File"] = newFile;
+            ViewBag.File = newFile.Item1;
+            ViewBag.Credentials = newFile.Item2;
+            ViewBag.ContainerName = containerName;
+            ViewBag.StorageAccount = accountName;
             return View();
         }
 
@@ -39,14 +42,16 @@ namespace WStorageApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        async Task<string> CreateBlockBlobAsync(string accountName, string containerName)
+        async Task<Tuple<string,string>> CreateBlockBlobAsync(string accountName, string containerName)
         {
             string rval = string.Empty;
+            string credentialString = string.Empty;
             // Construct the blob container endpoint from the arguments.
             string containerEndpoint = $"https://{accountName}.blob.core.windows.net/{containerName}";
 
             // Get a credential and create a client object for the blob container.
             var credential = new DefaultAzureCredential();
+            credentialString = credential.ToString();
             BlobContainerClient containerClient = new BlobContainerClient(new Uri(containerEndpoint),
                                                                             credential);
 
@@ -72,7 +77,7 @@ namespace WStorageApp.Controllers
                 Console.ReadLine();
                 throw;
             }
-            return rval;
+            return new Tuple<string, string>(rval, credentialString);
         }
 
         //private async Task<string> GetAccessTokenAsync()
